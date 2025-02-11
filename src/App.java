@@ -15,6 +15,8 @@ public class App {
     private boolean modoSeleccion = false;
     private Cell inicio = null, fin = null;
     private JTextField inputFilas, inputColumnas;
+    private String metodoSeleccionado = null;
+
 
     public App(int filas, int columnas) {
         inicializarUI(filas, columnas);
@@ -40,10 +42,35 @@ public class App {
         });
 
         JButton botonRecorrido = new JButton("Iniciar Recorrido");
-        botonRecorrido.addActionListener(e -> mostrarRutaAnimada());
+        botonRecorrido.addActionListener(e -> {
+            if (metodoSeleccionado == null) {
+                JOptionPane.showMessageDialog(frame, "Método no seleccionado. Por favor, elija un método de búsqueda.");
+            } else {
+                mostrarRutaAnimada();  // Solo se llama si hay un método seleccionado
+            }
+        });
+
+        JButton botonTiempo = new JButton("Tiempo de Ejecucion");
+        botonTiempo.addActionListener(e -> {
+        if (metodoSeleccionado == null) {
+            JOptionPane.showMessageDialog(frame, "Método no seleccionado. Por favor, elija un método de búsqueda.");
+        } else {
+            mostrarRuta();  // Solo se llama si hay un método seleccionado
+        }
+    });
 
         JButton botonReiniciar = new JButton("Reiniciar");
         botonReiniciar.addActionListener(e -> reiniciar());
+
+        JButton botonSeleccionMetodo = new JButton("Seleccionar Método");
+        JPopupMenu menuMetodos = new JPopupMenu();
+        String[] metodos = {"DFS", "BFS", "Recursión Simple", "Programación Dinámica"};
+        for (String metodo : metodos) {
+            JMenuItem item = new JMenuItem(metodo);
+            item.addActionListener(e -> metodoSeleccionado = metodo);
+            menuMetodos.add(item);
+        }
+        botonSeleccionMetodo.addActionListener(e -> menuMetodos.show(botonSeleccionMetodo, 0, botonSeleccionMetodo.getHeight()));
 
         JLabel jlFilas = new JLabel("Filas: ");
         jlFilas.setForeground(Color.WHITE);
@@ -55,13 +82,15 @@ public class App {
         JButton botonActualizar = new JButton("Crear");
         botonActualizar.addActionListener(e -> actualizarMatrizDesdeInput());
 
-        JPanel panelBotones = new JPanel(new GridLayout(2, 2));
+        JPanel panelBotones = new JPanel(new GridLayout(3, 2));
         panelBotones.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         panelBotones.setBackground(Color.DARK_GRAY);
         panelBotones.add(botonObstaculos);
         panelBotones.add(botonSeleccion);
         panelBotones.add(botonRecorrido);
         panelBotones.add(botonReiniciar);
+        panelBotones.add(botonTiempo);
+        panelBotones.add(botonSeleccionMetodo);
 
         JPanel panelBotones2 = new JPanel(new GridLayout(1, 5, 10, 10));
         panelBotones2.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -72,10 +101,22 @@ public class App {
         panelBotones2.add(inputColumnas);
         panelBotones2.add(botonActualizar);
 
+        JPopupMenu menuEmergente = new JPopupMenu();
+        JMenuItem recursivo = new JMenuItem("Metodo Recursivo");
+        JMenuItem bfs = new JMenuItem("Metodo BFS");
+        JMenuItem dp = new JMenuItem("Metodo DP");
+        JMenuItem dfs = new JMenuItem("Metodo DFS");
+
+        menuEmergente.add(recursivo);
+        menuEmergente.add(bfs);
+        menuEmergente.add(dp);
+        menuEmergente.add(dfs);
+
         frame.add(panelBotones2, BorderLayout.NORTH);
         frame.add(panelMatriz, BorderLayout.CENTER);
         frame.add(panelBotones, BorderLayout.SOUTH);
         frame.setSize(500, 500);
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 
@@ -156,6 +197,49 @@ public class App {
         worker.execute();
     }
 
+    private void mostrarRuta() {
+        if (metodoSeleccionado == null) {
+            JOptionPane.showMessageDialog(frame, "Método no seleccionado. Por favor, elija un método de búsqueda.");
+            return;
+        }
+    
+        List<Cell> ruta = switch (metodoSeleccionado) {
+            case "DFS" -> buscarDFS();
+            case "BFS" -> buscarBFS();
+            case "Recursión Simple" -> encontrarRutaRecursiva();
+            case "Programación Dinámica" -> pogramacionDinamica();
+            default -> Collections.emptyList();
+        };
+    
+        if (ruta.isEmpty()) {
+            JOptionPane.showMessageDialog(frame, "No se encontró una ruta.");
+        } else {
+            for (Cell c : ruta) {
+                if (!c.equals(inicio) && !c.equals(fin)) { // Evita cambiar el inicio y fin
+                    botones[c.row][c.col].setBackground(new Color(49, 139, 49));
+                }
+            }
+        }
+    }
+
+    
+
+    private void reiniciar() {
+        actualizarMatriz(matriz.length, matriz[0].length);
+        inicio = null;
+        fin = null;
+        modoObstaculos = false;
+        modoSeleccion = false;
+    }
+
+    private List<Cell> buscarDFS() {
+            return null;
+    }
+
+    private List<Cell> buscarBFS() {
+            return null;
+    }
+
     private List<Cell> encontrarRutaRecursiva() {
         List<Cell> ruta = new ArrayList<>();
         if (inicio != null && fin != null) {
@@ -184,12 +268,8 @@ public class App {
         return false;
     }
 
-    private void reiniciar() {
-        actualizarMatriz(matriz.length, matriz[0].length);
-        inicio = null;
-        fin = null;
-        modoObstaculos = false;
-        modoSeleccion = false;
+    private List<Cell> pogramacionDinamica() {
+            return null;
     }
 
     public static void main(String[] args) {
