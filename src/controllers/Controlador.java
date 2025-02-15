@@ -1,29 +1,45 @@
-import controllers.Controlador;
+package controllers;
 
-public class App {
-    /* 
-    private JFrame frame;
-    private JPanel panelMatriz;
-    private JButton[][] botones;
-    private JTextField inputFilas, inputColumnas;
+import java.awt.Color;
+import java.awt.GridLayout;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.SwingWorker;
+
+import models.Cell;
+import models.ModeloMatriz;
+import views.Vista;
+
+public class Controlador {
+    private Vista vista;
     private ModeloMatriz matrizObj;
+    private JPanel panelMatriz;
+    private Cell inicio = null, fin = null;
+    private JButton[][] botones;
     private boolean modoObstaculos = false;
     private boolean modoSeleccion = false;
-    private Cell inicio = null, fin = null;
     private String metodoSeleccionado = null;
-
-    
-    private JLabel lblResultados;
-
-    public App(int filas, int columnas) {
-        inicializarUI(filas, columnas);
+    public Controlador(int filas, int columnas){
+        this.panelMatriz = new JPanel();
+        this.matrizObj = new ModeloMatriz(filas, columnas);
+        this.vista = new Vista(filas, columnas, this); 
+    }
+    public Controlador(String s){
+        System.out.println("Control O : " + s);
     }
 
-    private void seleccionarMetodo() {
+
+    public void seleccionarMetodo() {
         String[] metodos = {"DFS", "BFS", "Recursión", "Programación Dinámica"};
         String metodoElegido = (String) JOptionPane.showInputDialog(
-                frame,
+                vista.getFrame(),
                 "Seleccione un método de búsqueda:",
                 "Método de Búsqueda",
                 JOptionPane.QUESTION_MESSAGE,
@@ -34,106 +50,11 @@ public class App {
 
         if (metodoElegido != null) {
             metodoSeleccionado = metodoElegido;
-            JOptionPane.showMessageDialog(frame, "Método seleccionado: " + metodoSeleccionado,
+            JOptionPane.showMessageDialog(vista.getFrame(), "Método seleccionado: " + metodoSeleccionado,
                     "Confirmación", JOptionPane.INFORMATION_MESSAGE);
         }
     }
-
-    private void inicializarUI(int filas, int columnas) {
-        frame = new JFrame("Matriz de Botones");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        panelMatriz = new JPanel();
-        actualizarMatriz(filas, columnas);
-        // Crear el JLabel para mostrar resultados
-        lblResultados = new JLabel("Resultados aparecerán aquí");
-        frame.add(lblResultados, BorderLayout.SOUTH);
-
-        JButton botonObstaculos = new JButton("Ingresar Obstáculos");
-        botonObstaculos.addActionListener(e -> {
-            modoObstaculos = true;
-            modoSeleccion = false;
-        });
-
-        JButton botonSeleccion = new JButton("Seleccionar A y B");
-        botonSeleccion.addActionListener(e -> {
-            modoObstaculos = false;
-            modoSeleccion = true;
-        });
-
-        JButton botonRecorrido = new JButton("Iniciar Recorrido");
-        botonRecorrido.addActionListener(e -> {
-            if (metodoSeleccionado == null) {
-                JOptionPane.showMessageDialog(frame, "Método no seleccionado. Por favor, elija un método de búsqueda.");
-            } else {
-                mostrarRutaAnimada(); 
-            }
-        });
-
-        JButton botonTiempo = new JButton("Tiempo de Ejecucion");
-        botonTiempo.addActionListener(e -> {
-            if (metodoSeleccionado == null) {
-                JOptionPane.showMessageDialog(frame, "Método no seleccionado. Por favor, elija un método de búsqueda.");
-            } else {
-                mostrarRuta();  
-            }
-        });
-
-        JButton botonReiniciar = new JButton("Reiniciar");
-        botonReiniciar.addActionListener(e -> reiniciar());
-
-        JButton botonSeleccionMetodo = new JButton("Seleccionar Método");
-        botonSeleccionMetodo.addActionListener(e -> seleccionarMetodo());
-
-        JLabel jlFilas = new JLabel("Filas: ");
-        jlFilas.setForeground(Color.WHITE);
-        JLabel jlColumnas = new JLabel("Columnas: ");
-        jlColumnas.setForeground(Color.white);
-
-        inputFilas = new JTextField(5);
-        inputColumnas = new JTextField(5);
-        JButton botonActualizar = new JButton("Crear");
-        botonActualizar.addActionListener(e -> actualizarMatrizDesdeInput());
-
-        JPanel panelBotones = new JPanel(new GridLayout(3, 2));
-        panelBotones.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        panelBotones.setBackground(Color.DARK_GRAY);
-        panelBotones.add(botonObstaculos);
-        panelBotones.add(botonSeleccion);
-        panelBotones.add(botonRecorrido);
-        panelBotones.add(botonReiniciar);
-        panelBotones.add(botonTiempo);
-        panelBotones.add(botonSeleccionMetodo);
-
-        JPanel panelBotones2 = new JPanel(new GridLayout(1, 5, 10, 10));
-        panelBotones2.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        panelBotones2.setBackground(Color.DARK_GRAY);
-        panelBotones2.add(jlFilas);
-        panelBotones2.add(inputFilas);
-        panelBotones2.add(jlColumnas);
-        panelBotones2.add(inputColumnas);
-        panelBotones2.add(botonActualizar);
-
-        JPopupMenu menuEmergente = new JPopupMenu();
-        JMenuItem recursivo = new JMenuItem("Metodo Recursivo");
-        JMenuItem bfs = new JMenuItem("Metodo BFS");
-        JMenuItem dp = new JMenuItem("Metodo DP");
-        JMenuItem dfs = new JMenuItem("Metodo DFS");
-
-        menuEmergente.add(recursivo);
-        menuEmergente.add(bfs);
-        menuEmergente.add(dp);
-        menuEmergente.add(dfs);
-
-        frame.add(panelBotones2, BorderLayout.NORTH);
-        frame.add(panelMatriz, BorderLayout.CENTER);
-        frame.add(panelBotones, BorderLayout.SOUTH);
-        frame.setSize(500, 500);
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
-    }
-    //Metodo ActualizarMatriz
-    public void actualizarMatriz(int filas, int columnas) {
+    public void actualizarMatriz(int filas, int columnas){
         panelMatriz.removeAll();
         panelMatriz.setLayout(new GridLayout(filas, columnas));
        
@@ -141,7 +62,7 @@ public class App {
         
         botones = new JButton[filas][columnas];
 
-        for (int i = 0; i < filas; i++) {
+        for (int i = 0; i < filas; i++) { 
             for (int j = 0; j < columnas; j++) {
                 
                 matrizObj.llenarMatriz(true);
@@ -170,101 +91,32 @@ public class App {
         panelMatriz.revalidate();
         panelMatriz.repaint();
     }
-
-    private void actualizarMatrizDesdeInput() {
+    public void actualizarMatrizDesdeInput(){
         try {
-            int filas = Integer.parseInt(inputFilas.getText());
-            int columnas = Integer.parseInt(inputColumnas.getText());
+            int filas = Integer.parseInt(vista.getInputFilas().getText());
+            int columnas = Integer.parseInt(vista.getInputColumnas().getText());
             if (filas > 0 && columnas > 0) {
                 //actualizarMatriz(filas, columnas);
                 actualizarMatriz(filas, columnas);
             } else {
-                JOptionPane.showMessageDialog(frame, "Ingrese valores positivos.");
+                JOptionPane.showMessageDialog(vista.getFrame(), "Ingrese valores positivos.");
             }
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(frame, "Ingrese un número válido.");
+            JOptionPane.showMessageDialog(vista.getFrame(), "Ingrese un número válido.");
         }
     }
-
-    private void mostrarRutaAnimada() {
-        List<Cell> ruta = encontrarRutaRecursiva();
-        if (ruta.isEmpty()) {
-            JOptionPane.showMessageDialog(frame, "No se encontró una ruta.");
-            return;
-        }
-
-        SwingWorker<Void, Cell> worker = new SwingWorker<>() {
-            @Override
-            protected Void doInBackground() throws Exception {
-                for (Cell c : ruta) {
-                    publish(c);
-                    Thread.sleep(300); 
-                }
-                return null;
-            }
-
-            @Override
-            protected void process(List<Cell> chunks) {
-                for (Cell c : chunks) {
-                    botones[c.row][c.col].setBackground(Color.GREEN);
-                }
-            }
-        };
-
-        worker.execute();
-    }
-
-    private void mostrarRuta() {
-        if (metodoSeleccionado == null) {
-            JOptionPane.showMessageDialog(frame, "Debe seleccionar un método antes de ejecutar.",
-                    "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        long inicioTiempo = System.nanoTime(); 
-
-        List<Cell> ruta = switch (metodoSeleccionado) {
-            case "DFS" ->
-                buscarDFS();
-            case "BFS" ->
-                buscarBFS();
-            case "Recursión" ->
-                encontrarRutaRecursiva();
-            case "Programación Dinámica" ->
-                programacionDinamica();
-            default ->
-                Collections.emptyList();
-        };
-
-        long finTiempo = System.nanoTime(); 
-        long tiempoEjecucion = finTiempo - inicioTiempo; 
-        if (ruta == null || ruta.isEmpty()) {
-            JOptionPane.showMessageDialog(frame, "No se encontró una ruta.", "Información", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        for (Cell c : ruta) {
-            if (!c.equals(inicio) && !c.equals(fin)) {
-                botones[c.row][c.col].setBackground(new Color(49, 139, 49)); 
-            }
-        }
-        String tiempoFormateado = String.format("Tiempo de ejecución: %.2f ms", tiempoEjecucion / 1_000_000.0);
-        JOptionPane.showMessageDialog(frame, tiempoFormateado, "Tiempo de Ejecución", JOptionPane.INFORMATION_MESSAGE);
-    }
-
-    private void reiniciar() {
-        //actualizarMatriz(matriz.length, matriz[0].length);
+    public void reiniciar() {
         actualizarMatriz(matrizObj.getFilas(), matrizObj.getColumnas());
-        
         inicio = null;
         fin = null;
         modoObstaculos = false;
         modoSeleccion = false;
         metodoSeleccionado = null; 
-        JOptionPane.showMessageDialog(frame, "El programa se ha reiniciado. Seleccione un método nuevamente.",
+        JOptionPane.showMessageDialog(vista.getFrame(), "El programa se ha reiniciado. Seleccione un método nuevamente.",
                 "Reinicio", JOptionPane.INFORMATION_MESSAGE);
     }
 
-    private List<Cell> encontrarRutaRecursiva() {
+    public List<Cell> encontrarRutaRecursiva() {
         List<Cell> ruta = new ArrayList<>();
         if (inicio != null && fin != null) {
             // Utiliza visitadoObj en lugar de visitado
@@ -275,7 +127,6 @@ public class App {
         }
         return Collections.emptyList();
     }
-
     private boolean buscarRutaRecursiva(int row, int col, List<Cell> ruta, boolean[][] visitado) {
        
         if (row < 0 || col < 0 || row >= matrizObj.getFilas() || col >= matrizObj.getColumnas() || 
@@ -304,9 +155,72 @@ public class App {
         ruta.remove(ruta.size() - 1);
         return false;
     }
-    
 
-    private List<Cell> programacionDinamica() { 
+    public void mostrarRuta() {
+        if (metodoSeleccionado == null) {
+            JOptionPane.showMessageDialog(vista.getFrame(), "Debe seleccionar un método antes de ejecutar.",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        long inicioTiempo = System.nanoTime(); 
+
+        List<Cell> ruta = switch (metodoSeleccionado) {
+            case "DFS" ->
+                buscarDFS();
+            case "BFS" ->
+                buscarBFS();
+            case "Recursión" ->
+                encontrarRutaRecursiva();
+            case "Programación Dinámica" ->
+                programacionDinamica();
+            default ->
+                Collections.emptyList();
+        };
+
+        long finTiempo = System.nanoTime(); 
+        long tiempoEjecucion = finTiempo - inicioTiempo; 
+        if (ruta == null || ruta.isEmpty()) {
+            JOptionPane.showMessageDialog(vista.getFrame(), "No se encontró una ruta.", "Información", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        for (Cell c : ruta) {
+            if (!c.equals(inicio) && !c.equals(fin)) {
+                botones[c.row][c.col].setBackground(new Color(49, 139, 49)); 
+            }
+        }
+        String tiempoFormateado = String.format("Tiempo de ejecución: %.2f ms", tiempoEjecucion / 1_000_000.0);
+        JOptionPane.showMessageDialog(vista.getFrame(), tiempoFormateado, "Tiempo de Ejecución", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public void mostrarRutaAnimada() {
+        List<Cell> ruta = encontrarRutaRecursiva();
+        if (ruta.isEmpty()) {
+            JOptionPane.showMessageDialog(vista.getFrame(), "No se encontró una ruta.");
+            return;
+        }
+
+        SwingWorker<Void, Cell> worker = new SwingWorker<>() {
+            @Override
+            protected Void doInBackground() throws Exception {
+                for (Cell c : ruta) {
+                    publish(c);
+                    Thread.sleep(300); 
+                }
+                return null;
+            }
+
+            @Override
+            protected void process(List<Cell> chunks) {
+                for (Cell c : chunks) {
+                    botones[c.row][c.col].setBackground(Color.GREEN);
+                }
+            }
+        };
+
+        worker.execute();
+    }
+        private List<Cell> programacionDinamica() { 
         int filas = matrizObj.getFilas();
         int columnas = matrizObj.getColumnas();
         int[][] dp = new int[filas][columnas];
@@ -423,8 +337,47 @@ public class App {
         }
         return Collections.emptyList();
     }
-    */
-    public static void main(String[] args) {
-        Controlador runApp = new Controlador(1,1);
+    
+
+
+    
+
+    public boolean isModoObstaculos() {
+        return modoObstaculos;
     }
+    public void setModoObstaculos(boolean modoObstaculos) {
+        this.modoObstaculos = modoObstaculos;
+    }
+    public boolean isModoSeleccion() {
+        return modoSeleccion;
+    }
+    public void setModoSeleccion(boolean modoSeleccion) {
+        this.modoSeleccion = modoSeleccion;
+    }
+    public Cell getInicio() {
+        return inicio;
+    }
+    public void setInicio(Cell inicio) {
+        this.inicio = inicio;
+    }
+    public Cell getFin() {
+        return fin;
+    }
+    public void setFin(Cell fin) {
+        this.fin = fin;
+    }
+    public String getMetodoSeleccionado() {
+        return metodoSeleccionado;
+    }
+    public void setMetodoSeleccionado(String metodoSeleccionado) {
+        this.metodoSeleccionado = metodoSeleccionado;
+    }
+    public JPanel getPanelMatriz() {
+        return panelMatriz;
+    }
+    public void setPanelMatriz() {
+        this.panelMatriz = panelMatriz;
+    }
+    
+    
 }
