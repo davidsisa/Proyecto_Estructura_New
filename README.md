@@ -1,6 +1,6 @@
 # Informe - Proyecto Final
 
-Integrantes: Alex Paucar, Eduardo Burbano, David Sisa
+Integrantes: Alexander vizhñay, Eduardo Burbano, David Sisa
 ## Objetivo
 Generar una interfaz grafica interactiva, en la que se demuestre la efectividad y eficiencia de metodos de busquedas no 
 lineales, donde se efectua los 4 metodosaprendidos a lo largo del interciclo, Recursividad, Programación Dinamica, BFS,
