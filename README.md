@@ -14,3 +14,6 @@ Las siguientes carpetas contienen:
 La carpeta bin, y vscode, son carpetas independientes que no afectan al codigo fuente, mas que solamente cargar componetes adicionales.
 
 ## Clases e Interfaces
+
+### Modelos: 
+-`Cell`: La clase Cell, es un modelo usado por la vista
