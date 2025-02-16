@@ -1,6 +1,6 @@
-## Getting Started
+## Informe - Proyecto Final
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Integrantes: Alex Paucar, Eduardo Burbano, David Sisa
 
 ## Folder Structure
 
