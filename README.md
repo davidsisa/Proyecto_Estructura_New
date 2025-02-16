@@ -1,4 +1,4 @@
-## Informe - Proyecto Final
+# Informe - Proyecto Final
 
 Integrantes: Alex Paucar, Eduardo Burbano, David Sisa
 
@@ -13,4 +13,4 @@ Las siguientes carpetas contienen:
 
 La carpeta bin, y vscode, son carpetas independientes que no afectan al codigo fuente, mas que solamente cargar componetes adicionales.
 
-# Clases e Interfaces
+## Clases e Interfaces
