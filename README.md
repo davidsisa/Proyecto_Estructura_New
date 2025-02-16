@@ -24,7 +24,7 @@ La carpeta bin, y vscode, son carpetas independientes que no afectan al codigo f
 
 ### Modelos: 
 -`Cell`: El modelo Cell representa una celda en una matriz y es usado para el almacenamiento de una posición espeficia de una matriz. Es un 
-modelo exclusivo del Controlador, el cual lo usa para metodos como buscarRutaRecursiva.
+-modelo exclusivo del Controlador, el cual lo usa para metodos como buscarRutaRecursiva.
 -`ModeloMatriz`: El modeo ModeloMatriz es la representación de una matriz, en formato clase, si bien, se pudo hacer una variable de ese tipo,
 pero es mejor estructurarlo en una clase. Sirve para instanciar un objeto tipo Matriz, el cual nos facilita el bloqueo o desbloqueo de una 
 celda para la creación de obstaculos, puntos de incicio, o recorrer la ruta. Tambien es usada como el modelo de metodos de tipos de recorridos
