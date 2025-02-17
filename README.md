@@ -52,7 +52,8 @@ de estas clases como modelos en el controlador para su propio uso.
 *AQUI VA EL CRITERIO DE CADA UNO DE USTEDES*
 
 ### Desarrollo :
-
+  Contiene un atributo privado tipo matriz booleano.
+  
   La clase ModeloMatriz, como modelo, usa getters y setters, para obtener las filas y columnas, y tambien para agregar valores en los mismos.
   Tambien tiene un modelo llamado LlenarMatriz() que usado para llenar la matriz de un valor booleano.
   
@@ -61,8 +62,9 @@ de estas clases como modelos en el controlador para su propio uso.
   
   Tal y como se ven en la imagen :
 
+
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/d2f3015e-4bcf-4645-aa07-cccd5b5d30d8" alt="image">
+  <img src="https://github.com/user-attachments/assets/437e5ab6-0c4e-440a-bb27-2325ccf7b0c2" alt="image">
 </p>
 
 
