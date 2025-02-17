@@ -1,8 +1,10 @@
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/a57e8ccb-5fd1-4af6-b601-c363fbefa9a" alt="Logo" width="300">
-</div>
 
-Proyecto Final
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/caa1a648-f9f1-4327-a500-68c62f8420ea" alt="image">
+</p>
+
+
+# Proyecto Final
 
 Integrantes: Alex Paucar, Eduardo Burbano, David Sisa
 
