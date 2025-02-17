@@ -8,10 +8,10 @@
 
 - Carrera: Ingenieria en Ciencias de la Computación
 - Materia: Estructura de Datos
-- Integrantes: David Esteban Sisa Buesta 'dsisab@est.ups.edu.ec'
+- Integrantes: David Esteban Sisa Buestan  'dsisab@est.ups.edu.ec'
 
 ## Descripción
-Se plantea hacer un programa donde el usuario pueda crear una matriz, donde pueda seleccionar el metodo de busqueda, los
+- Se plantea hacer un programa donde el usuario pueda crear una matriz, donde pueda seleccionar el metodo de busqueda, los
 obstaculos, y tambien el punto de partida, y donde debe terminar. Al final, al iniciar el recorrido debera buscar el 
 camino mas adecuado para poder llegar al punto final.
 
