@@ -52,10 +52,10 @@ de estas clases como modelos en el controlador para su propio uso.
 
 ### Desarrollo :
 <p style="text-align: justify;">
-La clase ModeloMatriz, como modelo, usa getters y setters, para obtener las filas y columnas, y tambien para agregar valores en los mismos.
-Tambien tiene un modelo llamado LlenarMatriz() que usado para llenar la matriz de un valor booleano.
-En el constructor, se inicializan con parametros Integer, filas columnas,  que dan a lugar una matriz booleana con las filas y columnas con las 
-que se instancian en otra clase. Tan y como se ven en la imagen :
+  La clase ModeloMatriz, como modelo, usa getters y setters, para obtener las filas y columnas, y tambien para agregar valores en los mismos.
+  Tambien tiene un modelo llamado LlenarMatriz() que usado para llenar la matriz de un valor booleano.
+  En el constructor, se inicializan con parametros Integer, filas columnas,  que dan a lugar una matriz booleana con las filas y columnas con las 
+  que se instancian en otra clase. Tan y como se ven en la imagen :
 </p>
 
 
