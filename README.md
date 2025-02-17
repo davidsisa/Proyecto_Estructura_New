@@ -11,7 +11,7 @@
 - Integrantes: David Esteban Sisa Buestan  'dsisab@est.ups.edu.ec'
 
 ## Descripción
-- Se plantea hacer un programa donde el usuario pueda crear una matriz, donde pueda seleccionar el metodo de busqueda, los
+ Se plantea hacer un programa donde el usuario pueda crear una matriz, donde pueda seleccionar el metodo de busqueda, los
 obstaculos, y tambien el punto de partida, y donde debe terminar. Al final, al iniciar el recorrido debera buscar el 
 camino mas adecuado para poder llegar al punto final.
 
@@ -19,15 +19,15 @@ camino mas adecuado para poder llegar al punto final.
 ### Marco Teórico : 
 
 #### Busqueda en Profundidad:
-- El algoritmo DFS es un método de recorrido de grafos y arboles que explora cada rama completamente antes de retroceder. Utiliza una pila para recordar los nodos visitados.
+ El algoritmo DFS es un método de recorrido de grafos y arboles que explora cada rama completamente antes de retroceder. Utiliza una pila para recordar los nodos visitados.
 Este metodo puede aplicarse de forma recursiva.
 
 #### Busqueda en Anchura:
-- El algoritmo BFS  recorre un grafo o arbol nivel por nivel, explorando todos los nodos vecinos antes de profundizar. Utiliza una cola para gestionar los nodos por explorar.
+ El algoritmo BFS  recorre un grafo o arbol nivel por nivel, explorando todos los nodos vecinos antes de profundizar. Utiliza una cola para gestionar los nodos por explorar.
 Este metodo puede aplicarse de forma recursiva.
 
 #### Programación Dinamica:
-- La Programación Dinámica es una técnica de optimización para resolver problemas dividiéndolos en subproblemas más pequeños y almacenando los resultados para evitar cálculos repetitivos.
+ La Programación Dinámica es una técnica de optimización para resolver problemas dividiéndolos en subproblemas más pequeños y almacenando los resultados para evitar cálculos repetitivos.
 
 
 
