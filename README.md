@@ -1,10 +1,10 @@
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/caa1a648-f9f1-4327-a500-68c62f8420ea" alt="image">
-  # Proyecto Final
 </p>
-
-
+<p align="center">
+  Proyecto Final
+</p>
 
 
 - Carrera: Ingenieria en Ciencias de la Computación
