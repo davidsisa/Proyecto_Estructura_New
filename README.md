@@ -64,8 +64,9 @@ de estas clases como modelos en el controlador para su propio uso.
 
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/437e5ab6-0c4e-440a-bb27-2325ccf7b0c2" alt="image">
+  <img src="https://github.com/user-attachments/assets/041d26bd-247c-4fd1-bcdb-d7875a30bb55" alt="image">
 </p>
+
 
 
 
