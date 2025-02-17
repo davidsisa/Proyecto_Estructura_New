@@ -32,6 +32,10 @@ __Programación Dinamica:__
 
  - La Programación Dinámica es una técnica de optimización para resolver problemas dividiéndolos en subproblemas más pequeños y almacenando los resultados para evitar cálculos repetitivos.
 
+### Propuesta :
 
+Se va a utilizar el lenguaje de programación Java, donde se aprovechara sus librerias javax.swing.*, para el desarrollo de la interfaz grafica. Tambien, los ArrayList, Colecciones, y Listas,
+para el desarrollo de la logica del programa, y tambien los modelos. Con esto ya tenemos que solo estructurar la logica de cada clase.
+- 'dasd' :
 
 
