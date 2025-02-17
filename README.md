@@ -8,7 +8,9 @@ obstaculos, y tambien el punto de partida, y donde debe terminar. Al final, al i
 camino mas adecuado para poder llegar al punto final.
 
 ## Desarrollo 
-![image](https://github.com/user-attachments/assets/61e586e8-4ee6-4dca-bd31-0356189ed12f)
+Modelos: 
+Las clase cell, contiene dos variables publicas Iteger que representan columnas y finasl. Al igual de un constructor donde se inicializan las filas y columas, tal y como se ve en la imagen.
+![image](https://github.com/user-attachments/assets/7f676ded-9226-4ddc-b9e8-4a4c3d2e2bd7)
 
 
 # Metodos de Busqueda:
