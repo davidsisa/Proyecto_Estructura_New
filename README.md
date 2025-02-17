@@ -18,14 +18,16 @@ camino mas adecuado para poder llegar al punto final.
 ## Propuesta de solución: 
 ### Marco Teórico : 
 
-- Busqueda en Profundidad:
-El método buscarDFS() utiliza búsqueda en profundidad  para explorar el camino de manera recursiva. Se mueve en todas las direcciones posibles y retrocede si encuentra un obstáculo o un camino sin salida. Es eficiente en grafos pequeños pero puede no ser óptimo en encontrar el camino más corto.
+#### Busqueda en Profundidad:
+- El algoritmo DFS es un método de recorrido de grafos y arboles que explora cada rama completamente antes de retroceder. Utiliza una pila para recordar los nodos visitados.
+Este metodo puede aplicarse de forma recursiva.
 
-- Búsqueda en Anchura:
-El método buscarBFS() usa búsqueda en anchura , explorando primero los caminos más cercanos a la celda de inicio. Utiliza una cola  para procesar las celdas en orden de distancia. Garantiza encontrar la ruta más corta si todas las celdas tienen el mismo costo.
+#### Busqueda en Anchura:
+- El algoritmo BFS  recorre un grafo o arbol nivel por nivel, explorando todos los nodos vecinos antes de profundizar. Utiliza una cola para gestionar los nodos por explorar.
+Este metodo puede aplicarse de forma recursiva.
 
-- Programación Dinámica:
-El método programacionDinamica() construye una matriz de valores acumulativos , donde cada celda almacena la cantidad de formas en que puede alcanzarse desde el punto de inicio. Luego, reconstruye la ruta óptima retrocediendo desde el punto de destino. Es útil en casos donde se busca contar caminos en lugar de solo encontrar uno.
+#### Programación Dinamica:
+- La Programación Dinámica es una técnica de optimización para resolver problemas dividiéndolos en subproblemas más pequeños y almacenando los resultados para evitar cálculos repetitivos.
 
 
 
