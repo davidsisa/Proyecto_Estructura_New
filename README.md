@@ -17,6 +17,8 @@ camino mas adecuado para poder llegar al punto final.
 
 ## Propuesta de solución: 
 ### Marco Teórico : 
+
+- Busqueda en Profundidad:
 El método buscarDFS() utiliza búsqueda en profundidad  para explorar el camino de manera recursiva. Se mueve en todas las direcciones posibles y retrocede si encuentra un obstáculo o un camino sin salida. Es eficiente en grafos pequeños pero puede no ser óptimo en encontrar el camino más corto.
 
 - Búsqueda en Anchura:
