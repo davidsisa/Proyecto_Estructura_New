@@ -6,7 +6,9 @@
 
 # Proyecto Final
 
-Integrantes: Alex Paucar, Eduardo Burbano, David Sisa
+- Carrera: Ingenieria en Ciencias de la Computación
+- Materia: Estructura de Datos
+- Integrantes: David Esteban Sisa Buesta 'aasdas'
 
 ## Introducción
 Se plantea hacer un programa donde el usuario pueda crear una matriz, donde pueda seleccionar el metodo de busqueda, los
