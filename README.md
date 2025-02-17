@@ -1,5 +1,5 @@
 <div align="center">
-  ![image](https://github.com/user-attachments/assets/a57e8ccb-5fd1-4af6-b601-c363fbefa9a5)
+  <img src="[img/logo.png](https://github.com/user-attachments/assets/a57e8ccb-5fd1-4af6-b601-c363fbefa9a)" alt="Logo" width="300">
 </div>
 
 Proyecto Final
