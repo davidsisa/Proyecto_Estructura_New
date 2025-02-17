@@ -1,4 +1,4 @@
-# ![image](https://github.com/user-attachments/assets/a57e8ccb-5fd1-4af6-b601-c363fbefa9a5)
+![image](https://github.com/user-attachments/assets/a57e8ccb-5fd1-4af6-b601-c363fbefa9a5)
 Proyecto Final
 
 Integrantes: Alex Paucar, Eduardo Burbano, David Sisa
