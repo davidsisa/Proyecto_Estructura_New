@@ -3,7 +3,9 @@
   <img src="https://github.com/user-attachments/assets/caa1a648-f9f1-4327-a500-68c62f8420ea" alt="image">
 </p>
 <p align="center">
+  <h1>
   Proyecto Final
+  </h1>
 </p>
 
 
