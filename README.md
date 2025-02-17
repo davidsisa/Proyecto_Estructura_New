@@ -60,8 +60,10 @@ de estas clases como modelos en el controlador para su propio uso.
   que se instancian en otra clase.
   
   Tal y como se ven en la imagen :
-![image](https://github.com/user-attachments/assets/d2f3015e-4bcf-4645-aa07-cccd5b5d30d8)
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d2f3015e-4bcf-4645-aa07-cccd5b5d30d8" alt="image">
+</p>
 
 
 
