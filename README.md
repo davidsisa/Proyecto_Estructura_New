@@ -53,7 +53,8 @@ en la interfaz.
 
 
 Se va a utilizar el lenguaje de programación `Java`, donde se aprovechara sus librerias `javax.swing.*`, para el desarrollo de la interfaz grafica. Tambien, los ArrayList, Colecciones, y Listas,
-para el desarrollo de la logica del programa, y tambien los modelos, los cuales se encuentra en la libreria `java.util.*`. Todo esto se desarrolla en el editor de codigo VSCode, con esto planeamos
+para el desarrollo de la logica del programa, y tambien los modelos, los cuales se encuentra en la libreria `java.util.*`. Ademas de usar `JOptionPane` para mandar alertas al usuario y mejorar su experiencia.
+Todo esto se desarrolla en el editor de codigo VSCode, con esto planeamos
 el lugar donde se desarrollara el programa.
 
 ### Criterio por estudiantes :
@@ -107,6 +108,9 @@ de estas clases como modelos en el controlador para su propio uso.
   <img src="https://github.com/user-attachments/assets/9239f166-6067-46ec-baab-9a67800126e4" alt="image">
 </p>
 
+  Contiene en total 12 metodos entre publicas y privadas:
+
+  Metodo void seleccionarMetodos() sin parametros. Contiene Strings y sobretodo JOptionPane
 
 
 
