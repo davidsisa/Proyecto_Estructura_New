@@ -39,6 +39,17 @@ interactue con un boton. El otro modelo Cell para definir desde que punto se ini
 
 Finalmente, la clase App, que llama a la clase Controlador, instanciandola como objeto, y ejecutando tanto la clase Vista como el modelo ModeloMatriz.
 
+El controlador manejara variables unicas como una variable capaz de saber cuando un usuario toca un boton y ejecutar una orden, en el caso de ser la selección de inicio y fin de recorrido serian 
+de tipo Cell.
+
+Las dos Instancias de la clase Vista y Modelos, para conectarlos y al llamarlos en el App, se puedan iniciar directamente.
+
+Dos variables booleanas capaces de activar metodos, cuando el usuario pulse un boton cuando quiera poner obstaculos o seleccionar el tipo de busqueda. Y finalmente, un String para manejar que metodo
+selecciono el usuario.
+
+En la Vista, simplemente se cargan botones, paneles, y ventanas. Y tiene un constructor que inicializa un objeto tipo Controlador, capaz de llamar a los metods publicos de esta clase. E implementar
+en la interfaz.
+
 
 
 Se va a utilizar el lenguaje de programación `Java`, donde se aprovechara sus librerias `javax.swing.*`, para el desarrollo de la interfaz grafica. Tambien, los ArrayList, Colecciones, y Listas,
@@ -52,6 +63,8 @@ de estas clases como modelos en el controlador para su propio uso.
 *AQUI VA EL CRITERIO DE CADA UNO DE USTEDES*
 
 ### Desarrollo :
+  El modelo ModeloMatriz: 
+  
   Contiene un atributo privado tipo matriz booleano.
   
   La clase ModeloMatriz, como modelo, usa getters y setters, para obtener las filas y columnas, y tambien para agregar valores en los mismos.
@@ -63,10 +76,40 @@ de estas clases como modelos en el controlador para su propio uso.
   Tal y como se ven en la imagen :
 
 
-
 <p align="center">
   <img src="https://github.com/user-attachments/assets/8787be79-4302-4a85-8b53-59f10e5455ad" alt="image">
 </p>
+
+  El modelo Cell:
+
+  Contiene dos atributos publicos que son arrows y colums.
+
+  Solo tiene un constructor, donde tiene parametros Integer para arrow y col, donde se guardan en las variables del modelo.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5a3fe024-d213-4c32-99fd-811ad34f702c" alt="image">
+</p>
+  La clase Controlador:
+
+  Contiene en total 8 variables privadas :
+  
+  Las variables vista y matrizObj, son instancias de las clases Vista y ModeloMatriz, respectivamente. Usadas para cargar el contenido de otras clases, y unirlos.
+  Las variables, ambas instancias de Cell, son inicio y fin inicializadas como nulo, usadas en metodos de selección.
+  La variable panelMatriz y botones, son instancias de las clases pertenecientes a la libreria javax.swing.*, JPanel y JButton respectivamente.
+  Las dos variables booleanas para la selecion inicializadas como falsas ambas, modoObstaculos, y modoSeleccion.
+  
+ <p align="center">
+  <img src="https://github.com/user-attachments/assets/d3ec9bf7-af97-4263-97d5-fba00974fef8" alt="image">
+</p>
+
+
+
+
+
+
+
+  
+
 
 
 
