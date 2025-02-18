@@ -146,6 +146,8 @@ de estas clases como modelos en el controlador para su propio uso.
   El Metodo  mostrarRutaAnimada() cambia el color de los botones, segun el recorrido que hace la matriz, y de que tipo de busqueda. Contiene un sleep para que el programa tenga una 
   impresion de colores moderada y sea visible para el usuario.
 
+  
+
   El Metodo programaciónDinamica() inicializa una matriz dp donde cada celda almacena la cantidad de caminos posibles hasta ese punto. Si no hay caminos posibles hasta la celda de fin, retorna una lista vacía.
   Para reconstruir el camino, retrocede desde la celda de fin hasta la de inicio, siguiendo las celdas con caminos acumulados.
 
