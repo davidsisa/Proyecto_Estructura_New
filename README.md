@@ -53,9 +53,10 @@ en la interfaz.
 
 
 Se va a utilizar el lenguaje de programación `Java`, donde se aprovechara sus librerias `javax.swing.*`, para el desarrollo de la interfaz grafica. Tambien, los ArrayList, Colecciones, y Listas,
-para el desarrollo de la logica del programa, y tambien los modelos, los cuales se encuentra en la libreria `java.util.*`. Ademas de usar `JOptionPane` para mandar alertas al usuario y mejorar su experiencia.
-Todo esto se desarrolla en el editor de codigo VSCode, con esto planeamos
-el lugar donde se desarrollara el programa.
+para el desarrollo de la logica del programa, y tambien los modelos, los cuales se encuentra en la libreria `java.util.*`. Y de usar `JOptionPane` para mandar alertas al usuario y mejorar su experiencia.
+Aparte de librerias de excepciones y errores para mandar alertas al usuario.
+
+Todo esto se desarrolla en el editor de codigo VSCode, con esto planeamos el lugar donde se desarrollara el programa.
 
 ### Criterio por estudiantes :
 - David Sisa: Planteo que para la matriz y las celdas que se usan en el mismo, pueden ser programadas en Java, ahorrandonos la conexión a otros lenguajes UI, ademas de ello, nos facilitaria el uso
@@ -110,7 +111,22 @@ de estas clases como modelos en el controlador para su propio uso.
 
   Contiene en total 12 metodos entre publicas y privadas:
 
-  Metodo void seleccionarMetodos() sin parametros. Contiene Strings y sobretodo JOptionPane
+  Metodo void seleccionarMetodos() sin parametros. Contiene Strings y sobretodo JOptionPanes.
+
+  Metodo void actualizarMatriz() con dos parametros Integer filas y columnas. Remueve los objetos que contiene el panel e inicializa las dos variables matrizObj y botones.
+  Con bucles para llenar con booleanos la matriz y con colores los botones.
+
+  Metodo void actualizarMatrizDesdeInput() capaz de llamar a actualizarMatriz() cuando se valide que las filas y columnas sean diferentes de 0, tenga numeros positivos o  no errores.
+  Por ello, utiliza un try and catch. Con el error NumberFormatException.
+
+  Metodo void reiniciar() capaz de anular el valor de las variables globales y restaurar los ajustes preterminados. 
+
+  Metodo encotrarRutaRecurvia() que devuelve un List<Cell>, capaz de ejecutar un metodo privado buscarRutaRecursiva(), donde se utiliza la programación recursiva hasta que se encuentre
+  la ruta.
+
+  
+  
+  
 
 
 
@@ -120,8 +136,6 @@ de estas clases como modelos en el controlador para su propio uso.
 
 
   
-
-
 
 
 
