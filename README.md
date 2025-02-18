@@ -102,12 +102,9 @@ de estas clases como modelos en el controlador para su propio uso.
   La variable panelMatriz y botones, son instancias de las clases pertenecientes a la libreria javax.swing.*, JPanel y JButton respectivamente.
   
   Las dos variables booleanas para la selecion inicializadas como falsas ambas, modoObstaculos, y modoSeleccion.
-
-  Y el constructor que inicializa vista y modelo.
   
   Contiene en total 12 metodos entre publicas y privadas:
   
-  Cada metodo se programo con el fin de llamarlos desde la vista, aqui va un resumen de la funcionalidad de cada metodo explicado del controlador.
 
   A medida que se fue programando se fue pensando en nuevas ideas de metodos para dar funcionalidad a los botones de la vista. Y sobre todo a los metodos de
   busqueda.
