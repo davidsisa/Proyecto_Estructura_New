@@ -112,7 +112,8 @@ de estas clases como modelos en el controlador para su propio uso.
   Aqui esta la explicación del desarrollo de cada metodo con su respectivo codigo: 
   
   El Metodo  seleccionarMetodos() sin parametros. Contiene Strings y sobretodo JOptionPanes, capaz de enviar mensaje a los usuarios.
-  ![image](https://github.com/user-attachments/assets/320d6627-e12b-46a3-b858-7ba22e1b8cfe)
+  ![image](https://github.com/user-attachments/assets/aa80e9c8-b3c5-42f2-8fe0-022036f7b2d5)
+
 
 
   El Metodo  actualizarMatriz() con dos parametros Integer filas y columnas. Remueve los objetos que contiene el panel e inicializa las dos variables matrizObj y botones.
