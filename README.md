@@ -8,8 +8,7 @@
 
 - Carrera: Ingenieria en Ciencias de la Computación
 - Materia: Estructura de Datos
-- Integrantes: David Esteban Sisa Buestan  'dsisab@est.ups.edu.ec', *Borrar Esto - Escribir Aqui correo y nombres*
-
+- Integrantes: David Esteban Sisa Buestan  'dsisab@est.ups.edu.ec', Erick Alexander Vizhnay Paucar 'evizhnayp@est.ups.edu.ed', Eduardo Burbano 'correo@est.ups.edu.ec'
 ## Descripción
  Se plantea hacer un programa donde el usuario pueda crear una matriz, donde pueda seleccionar el metodo de busqueda, los
 obstaculos, y tambien el punto de partida, y donde debe terminar. Al final, al iniciar el recorrido debera buscar el 
@@ -27,6 +26,9 @@ Este metodo puede aplicarse de forma recursiva.
 
 - El algoritmo BFS  recorre un grafo o arbol nivel por nivel, explorando todos los nodos vecinos antes de profundizar. Utiliza una cola para gestionar los nodos por explorar.
 Este metodo puede aplicarse de forma recursiva.
+
+**Recursion:**
+La recursión es una técnica en la que una función se llama a sí misma para resolver un problema dividiéndolo en subproblemas más pequeños. En este proyecto, se utiliza para encontrar rutas en la matriz explorando cada posible dirección hasta llegar al destino. Aunque es un enfoque elegante y sencillo, puede ser menos eficiente en términos de memoria, ya que cada llamada recursiva añade información a la pila de ejecución.
 
 __Programación Dinamica:__
 
@@ -57,12 +59,6 @@ para el desarrollo de la logica del programa, y tambien los modelos, los cuales 
 Aparte de librerias de excepciones y errores para mandar alertas al usuario.
 
 Todo esto se desarrolla en el editor de codigo VSCode, con esto planeamos el lugar donde se desarrollara el programa.
-
-### Criterio por estudiantes :
-- David Sisa: Planteo que para la matriz y las celdas que se usan en el mismo, pueden ser programadas en Java, ahorrandonos la conexión a otros lenguajes UI, ademas de ello, nos facilitaria el uso
-de estas clases como modelos en el controlador para su propio uso.
-
-*AQUI VA EL CRITERIO DE CADA UNO DE USTEDES*
 
 ### Desarrollo :
   El modelo ModeloMatriz: 
@@ -199,12 +195,14 @@ de estas clases como modelos en el controlador para su propio uso.
 
 ## Conclusiones:
 
-En conclusión, el metodo mas eficaz es el metodo de busqueda por anchura, debido a su concepto, y aplicación dentro del programa. Esto porque garantiza encontrar el camino en termino de numero de pasos,
+David Sisa: En conclusión, el metodo mas eficaz es el metodo de busqueda por anchura, debido a su concepto, y aplicación dentro del programa. Esto porque garantiza encontrar el camino en termino de numero de pasos,
 ya que explora todos los nodos a la misma distancia del nodo de inicio antes de moverse mas lejos.
+Alexander Vizhñay: Se observó que BFS es el más eficiente para encontrar el camino más corto, mientras que DFS puede ser menos óptimo debido a su exploración profunda sin priorizar distancias. La Recursión ofrece una implementación intuitiva, pero consume más memoria en casos grandes, y la Programación Dinámica optimiza cálculos almacenando resultados intermedios.
+Eduardo Burbano: 
 
 ## Aplicaciones:
 
-David Sisa: El objetivo era ver que busqueda es la mas optima, pero depende de que problema se enfrenta. En este caso, BFS es el mas apto para ello. En aplicaciones de estos metodos de busqueda puede estar
+El objetivo era ver que busqueda es la mas optima, pero depende de que problema se enfrenta. En este caso, BFS es el mas apto para ello. En aplicaciones de estos metodos de busqueda puede estar
 en mapas y navegación donde se utilice estos metodos para encontrar el camino mas corto hacia un lugar, o el recorrido de un robot, en donde puede elegir el paso del mismo, segun la ruta mas corta, y la
 eficiencia de la logica de codigo, que puede ser recursividad, programación dinamica, BFS o DFS.
 
