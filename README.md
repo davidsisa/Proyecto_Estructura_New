@@ -118,8 +118,6 @@ de estas clases como modelos en el controlador para su propio uso.
 </p>
 
 
-
-
   El Metodo  actualizarMatriz() con dos parametros Integer filas y columnas. Remueve los objetos que contiene el panel e inicializa las dos variables matrizObj y botones.
   Con bucles para llenar con booleanos la matriz y con colores los botones.
 
@@ -139,25 +137,44 @@ de estas clases como modelos en el controlador para su propio uso.
   El Metodo  mostrarRuta() capaz de validar el tiempo de ejecución de cada metodo que seleccione el usuario, tambien tiene un switch que se ejecuta cuando la variable metodoSeleccionado
   sea verdadero.
   
-  <p align="center">
-  <img src="https://github.com/user-attachments/assets/5fddae7a-8821-4986-9d1c-e7ccde2b4360" alt="image">
-  </p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5fd14336-fb1b-4924-8017-836e528d17b1" alt="image">
+</p>
 
   El Metodo  mostrarRutaAnimada() cambia el color de los botones, segun el recorrido que hace la matriz, y de que tipo de busqueda. Contiene un sleep para que el programa tenga una 
   impresion de colores moderada y sea visible para el usuario.
 
-  
+ <p align="center">
+  <img src="https://github.com/user-attachments/assets/47939e6f-6d20-4fcc-b92f-9e6f6b31d20f" alt="image">
+</p>
+
 
   El Metodo programaciónDinamica() inicializa una matriz dp donde cada celda almacena la cantidad de caminos posibles hasta ese punto. Si no hay caminos posibles hasta la celda de fin, retorna una lista vacía.
   Para reconstruir el camino, retrocede desde la celda de fin hasta la de inicio, siguiendo las celdas con caminos acumulados.
+  
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/a5dce68a-6f87-4ca6-b08d-4ad13dcd1020" alt="image">
+</p>
 
-  El Metodo buscarDFS() utiliza recursión para explorar cada posible dirección desde el punto de inicio, marca las celdas visitadas para evitar ciclos, y si  se alcanza la celda de fin, el camino se agrega a la       lista de resultados. Tiene un metodo llamado DFSHELPER el cual es el metodo que valida recursivamente los visitados y recorridos
+
+  El Metodo buscarDFS() utiliza recursión para explorar cada posible dirección desde el punto de inicio, marca las celdas visitadas para evitar ciclos, y si  se alcanza la celda de fin, el camino se agrega a la       lista de resultados. Tiene un metodo llamado DFSHELPER el cual es el metodo que valida recursivamente los visitados y recorridos.
+  
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b0740513-1f9c-40ed-b1e5-19d4f7cee87a" alt="image">
+</p>
 
   El Metodo  buscarBFS() que utiliza una cola para gestionar los nodos por explorar y que en cada iteración, explora las celdas adyacentes y las agrega a la cola si no han sido visitadas.
-  
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d570b1a7-b0aa-4c26-afce-0e30c5c42019" alt="image">
+</p>
+
   El Metodo encotrarRutaRecurvia() , capaz de ejecutar un metodo privado buscarRutaRecursiva(), donde se utiliza la programación recursiva hasta que se encuentre
   la ruta.
-  ![image](https://github.com/user-attachments/assets/6014b6d8-1850-4cec-80d7-0a6edfdc4d07)
+  
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/5fddae7a-8821-4986-9d1c-e7ccde2b4360" alt="image">
+  </p>
 
 
   En total estos son los metodos pero tambien tenemos los setters y getters de algunos parametros con el fin de que alguna clase necesite utilizarlos, en este caso la vista. En este caso, son los paneles.
