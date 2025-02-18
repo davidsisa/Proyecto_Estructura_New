@@ -8,7 +8,7 @@
 
 - Carrera: Ingenieria en Ciencias de la Computación
 - Materia: Estructura de Datos
-- Integrantes: David Esteban Sisa Buestan  'dsisab@est.ups.edu.ec', Erick Alexander Vizhñay Paucar 'evizhnayp@est.ups.edu.ec, *borrar esto y escribir tu nombr y correo edu*
+- Integrantes: David Esteban Sisa Buestan  'dsisab@est.ups.edu.ec', Erick Alexander Vizhñay Paucar 'evizhnayp@est.ups.edu.ec, Eduardo Burbano
 
 ## Descripción
  Se plantea hacer un programa donde el usuario pueda crear una matriz, donde pueda seleccionar el metodo de busqueda, los
@@ -31,6 +31,9 @@ Este metodo puede aplicarse de forma recursiva.
 __Programación Dinamica:__
 
  - La Programación Dinámica es una técnica de optimización para resolver problemas dividiéndolos en subproblemas más pequeños y almacenando los resultados para evitar cálculos repetitivos.
+
+__Recursión:__
+-Recursión: La recursión es una técnica en la que una función se llama a sí misma para resolver un problema dividiéndolo en subproblemas más pequeños. En este proyecto, se utiliza para encontrar rutas en la matriz explorando cada posible dirección hasta llegar al destino. Aunque es un enfoque elegante y sencillo, puede ser menos eficiente en términos de memoria, ya que cada llamada recursiva añade información a la pila de ejecución.
 
 ### Propuesta  :
 
@@ -198,15 +201,11 @@ de estas clases como modelos en el controlador para su propio uso.
 </p>
 
 ## Conclusiones:
+David Sisa: En conclusión, el método más eficaz es el método de busqueda por anchura, debido a su concepto y aplicación dentro del programa. Esto porque garantiza encontrar el camino en término de numerosos pasos, ya que explora todos los nodos a la misma distancia del nodo de inicio antes de moverse más lejos. 
+Alexander Vizhñay: Se observará que BFS es el más eficiente para encontrar el camino más corto, mientras que DFS puede ser menos óptimo debido a su exploración profunda sin priorizar distancias. La Recursión ofrece una implementación intuitiva, pero consume más memoria en casos grandes, y la Programación Dinámica optimiza los cálculos almacenando resultados intermedios.
+Eduardo Burbano: ese vrg nose que ira a poner
 
-En conclusión, el metodo mas eficaz es el metodo de busqueda por anchura, debido a su concepto, y aplicación dentro del programa. Esto porque garantiza encontrar el camino en termino de numero de pasos,
-ya que explora todos los nodos a la misma distancia del nodo de inicio antes de moverse mas lejos.
 
-## Aplicaciones:
-
-David Sisa: El objetivo era ver que busqueda es la mas optima, pero depende de que problema se enfrenta. En este caso, BFS es el mas apto para ello. En aplicaciones de estos metodos de busqueda puede estar
-en mapas y navegación donde se utilice estos metodos para encontrar el camino mas corto hacia un lugar, o el recorrido de un robot, en donde puede elegir el paso del mismo, segun la ruta mas corta, y la
-eficiencia de la logica de codigo, que puede ser recursividad, programación dinamica, BFS o DFS.
 
 
 
