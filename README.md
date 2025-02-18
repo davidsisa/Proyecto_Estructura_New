@@ -94,13 +94,20 @@ de estas clases como modelos en el controlador para su propio uso.
   Contiene en total 8 variables privadas :
   
   Las variables vista y matrizObj, son instancias de las clases Vista y ModeloMatriz, respectivamente. Usadas para cargar el contenido de otras clases, y unirlos.
-  Las variables, ambas instancias de Cell, son inicio y fin inicializadas como nulo, usadas en metodos de selección.
-  La variable panelMatriz y botones, son instancias de las clases pertenecientes a la libreria javax.swing.*, JPanel y JButton respectivamente.
-  Las dos variables booleanas para la selecion inicializadas como falsas ambas, modoObstaculos, y modoSeleccion.
   
- <p align="center">
-  <img src="https://github.com/user-attachments/assets/d3ec9bf7-af97-4263-97d5-fba00974fef8" alt="image">
+  Las variables, ambas instancias de Cell, son inicio y fin inicializadas como nulo, usadas en metodos de selección.
+  
+  La variable panelMatriz y botones, son instancias de las clases pertenecientes a la libreria javax.swing.*, JPanel y JButton respectivamente.
+  
+  Las dos variables booleanas para la selecion inicializadas como falsas ambas, modoObstaculos, y modoSeleccion.
+
+  Y el constructor que inicializa vista y modelo.
+  
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9239f166-6067-46ec-baab-9a67800126e4" alt="image">
 </p>
+
+
 
 
 
