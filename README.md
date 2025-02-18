@@ -110,32 +110,47 @@ de estas clases como modelos en el controlador para su propio uso.
 </p>
 
   Contiene en total 12 metodos entre publicas y privadas:
+  
   Cada metodo se programo con el fin de llamarlos desde la vista, aqui va un resumen de la funcionalidad de cada metodo explicado del controlador.
-  Metodo  seleccionarMetodos() sin parametros. Contiene Strings y sobretodo JOptionPanes.
 
-  Metodo  actualizarMatriz() con dos parametros Integer filas y columnas. Remueve los objetos que contiene el panel e inicializa las dos variables matrizObj y botones.
+  A medida que se fue programando se fue pensando en nuevas ideas de metodos para dar funcionalidad a los botones de la vista. Y sobre todo a los metodos de
+  busqueda.
+
+  Aqui esta la explicación del desarrollo de cada metodo con su respectivo codigo: 
+  
+  El Metodo  seleccionarMetodos() sin parametros. Contiene Strings y sobretodo JOptionPanes, capaz de enviar mensaje a los usuarios 
+
+  El Metodo  actualizarMatriz() con dos parametros Integer filas y columnas. Remueve los objetos que contiene el panel e inicializa las dos variables matrizObj y botones.
   Con bucles para llenar con booleanos la matriz y con colores los botones.
 
-  Metodo  actualizarMatrizDesdeInput() capaz de llamar a actualizarMatriz() cuando se valide que las filas y columnas sean diferentes de 0, tenga numeros positivos o  no errores.
+  El Metodo  actualizarMatrizDesdeInput() capaz de llamar a actualizarMatriz() cuando se valide que las filas y columnas sean diferentes de 0, tenga numeros positivos o  no errores.
   Por ello, utiliza un try and catch. Con el error NumberFormatException.
 
-  Metodo reiniciar() capaz de anular el valor de las variables globales y restaurar los ajustes preterminados. 
+  El Metodo reiniciar() capaz de anular el valor de las variables globales y restaurar los ajustes preterminados. 
 
 
-  Metodo  mostrarRuta() capaz de validar el tiempo de ejecución de cada metodo que seleccione el usuario, tambien tiene un switch que se ejecuta cuando la variable metodoSeleccionado
+  El Metodo  mostrarRuta() capaz de validar el tiempo de ejecución de cada metodo que seleccione el usuario, tambien tiene un switch que se ejecuta cuando la variable metodoSeleccionado
   sea verdadero.
 
-  Metodo  mostrarRutaAnimada() cambia el color de los botones, segun el recorrido que hace la matriz, y de que tipo de busqueda. Contiene un sleep para que el programa tenga una 
+  El Metodo  mostrarRutaAnimada() cambia el color de los botones, segun el recorrido que hace la matriz, y de que tipo de busqueda. Contiene un sleep para que el programa tenga una 
   impresion de colores moderada y sea visible para el usuario.
 
-  Metodo programaciónDinamica() inicializa una matriz dp donde cada celda almacena la cantidad de caminos posibles hasta ese punto. Si no hay caminos posibles hasta la celda de fin, retorna una lista vacía.
+  El Metodo programaciónDinamica() inicializa una matriz dp donde cada celda almacena la cantidad de caminos posibles hasta ese punto. Si no hay caminos posibles hasta la celda de fin, retorna una lista vacía.
   Para reconstruir el camino, retrocede desde la celda de fin hasta la de inicio, siguiendo las celdas con caminos acumulados.
 
-  Metodo buscarDFS() utiliza recursión para explorar cada posible dirección desde el punto de inicio, marca las celdas visitadas para evitar ciclos, y si  se alcanza la celda de fin, el camino se agrega a la       lista de resultados.
+  El Metodo buscarDFS() utiliza recursión para explorar cada posible dirección desde el punto de inicio, marca las celdas visitadas para evitar ciclos, y si  se alcanza la celda de fin, el camino se agrega a la       lista de resultados. Tiene un metodo llamado DFSHELPER el cual es el metodo que valida recursivamente los visitados y recorridos
 
-  Metodo 
-  Metodo encotrarRutaRecurvia() , capaz de ejecutar un metodo privado buscarRutaRecursiva(), donde se utiliza la programación recursiva hasta que se encuentre
+  El Metodo  buscarBFS() que utiliza una cola para gestionar los nodos por explorar y que en cada iteración, explora las celdas adyacentes y las agrega a la cola si no han sido visitadas.
+  
+  El Metodo encotrarRutaRecurvia() , capaz de ejecutar un metodo privado buscarRutaRecursiva(), donde se utiliza la programación recursiva hasta que se encuentre
   la ruta.
+
+  En total estos son los metodos pero tambien tenemos los setters y getters de algunos parametros con el fin de que alguna clase necesite utilizarlos, en este caso la vista. En este caso, son los paneles.
+  Y cuando los metodos de seleccion son ejecutados.
+  ![image](https://github.com/user-attachments/assets/b3539834-1b63-4637-b476-db96692663fe)
+
+
+  
 
   
   
