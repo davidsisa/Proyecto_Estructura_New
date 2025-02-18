@@ -8,7 +8,7 @@
 
 - Carrera: Ingenieria en Ciencias de la Computación
 - Materia: Estructura de Datos
-- Integrantes: David Esteban Sisa Buestan  'dsisab@est.ups.edu.ec', *Borrar Esto - Escribir Aqui correo y nombres*
+- Integrantes: David Esteban Sisa Buestan  'dsisab@est.ups.edu.ec', Erick Alexander Vizhñay Paucar 'evizhnayp@est.ups.edu.ec, *borrar esto y escribir tu nombr y correo edu*
 
 ## Descripción
  Se plantea hacer un programa donde el usuario pueda crear una matriz, donde pueda seleccionar el metodo de busqueda, los
