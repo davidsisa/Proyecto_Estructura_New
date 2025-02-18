@@ -112,26 +112,36 @@ de estas clases como modelos en el controlador para su propio uso.
   Aqui esta la explicación del desarrollo de cada metodo con su respectivo codigo: 
   
   El Metodo  seleccionarMetodos() sin parametros. Contiene Strings y sobretodo JOptionPanes, capaz de enviar mensaje a los usuarios.
-  ![image](https://github.com/user-attachments/assets/aa80e9c8-b3c5-42f2-8fe0-022036f7b2d5)
+  
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/aa80e9c8-b3c5-42f2-8fe0-022036f7b2d5" alt="image">
+</p>
+
 
 
 
   El Metodo  actualizarMatriz() con dos parametros Integer filas y columnas. Remueve los objetos que contiene el panel e inicializa las dos variables matrizObj y botones.
   Con bucles para llenar con booleanos la matriz y con colores los botones.
-  ![image](https://github.com/user-attachments/assets/2f44ea6c-7671-4d5d-89cf-ba3d4a8727a4)
 
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/50c88086-a9e2-4265-8317-d8753e4c7bd1" alt="image">
+  </p>
 
   El Metodo  actualizarMatrizDesdeInput() capaz de llamar a actualizarMatriz() cuando se valide que las filas y columnas sean diferentes de 0, tenga numeros positivos o  no errores.
   Por ello, utiliza un try and catch. Con el error NumberFormatException.
 
   El Metodo reiniciar() capaz de anular el valor de las variables globales y restaurar los ajustes preterminados. 
-  ![image](https://github.com/user-attachments/assets/db449796-0797-483e-baf2-552e37b1f8a8)
-
+  
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4b7a3038-262c-4dc2-9ee6-8d1017ef1b52" alt="image">
+</p>
 
   El Metodo  mostrarRuta() capaz de validar el tiempo de ejecución de cada metodo que seleccione el usuario, tambien tiene un switch que se ejecuta cuando la variable metodoSeleccionado
   sea verdadero.
-  ![image](https://github.com/user-attachments/assets/8f6cfaeb-9185-4268-b4f6-1f0a32aea8be)
-
+  
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/5fddae7a-8821-4986-9d1c-e7ccde2b4360" alt="image">
+  </p>
 
   El Metodo  mostrarRutaAnimada() cambia el color de los botones, segun el recorrido que hace la matriz, y de que tipo de busqueda. Contiene un sleep para que el programa tenga una 
   impresion de colores moderada y sea visible para el usuario.
