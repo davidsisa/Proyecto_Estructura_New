@@ -117,15 +117,20 @@ de estas clases como modelos en el controlador para su propio uso.
 
   El Metodo  actualizarMatriz() con dos parametros Integer filas y columnas. Remueve los objetos que contiene el panel e inicializa las dos variables matrizObj y botones.
   Con bucles para llenar con booleanos la matriz y con colores los botones.
+  ![image](https://github.com/user-attachments/assets/2f44ea6c-7671-4d5d-89cf-ba3d4a8727a4)
+
 
   El Metodo  actualizarMatrizDesdeInput() capaz de llamar a actualizarMatriz() cuando se valide que las filas y columnas sean diferentes de 0, tenga numeros positivos o  no errores.
   Por ello, utiliza un try and catch. Con el error NumberFormatException.
 
   El Metodo reiniciar() capaz de anular el valor de las variables globales y restaurar los ajustes preterminados. 
+  ![image](https://github.com/user-attachments/assets/db449796-0797-483e-baf2-552e37b1f8a8)
 
 
   El Metodo  mostrarRuta() capaz de validar el tiempo de ejecución de cada metodo que seleccione el usuario, tambien tiene un switch que se ejecuta cuando la variable metodoSeleccionado
   sea verdadero.
+  ![image](https://github.com/user-attachments/assets/8f6cfaeb-9185-4268-b4f6-1f0a32aea8be)
+
 
   El Metodo  mostrarRutaAnimada() cambia el color de los botones, segun el recorrido que hace la matriz, y de que tipo de busqueda. Contiene un sleep para que el programa tenga una 
   impresion de colores moderada y sea visible para el usuario.
@@ -139,6 +144,8 @@ de estas clases como modelos en el controlador para su propio uso.
   
   El Metodo encotrarRutaRecurvia() , capaz de ejecutar un metodo privado buscarRutaRecursiva(), donde se utiliza la programación recursiva hasta que se encuentre
   la ruta.
+  ![image](https://github.com/user-attachments/assets/6014b6d8-1850-4cec-80d7-0a6edfdc4d07)
+
 
   En total estos son los metodos pero tambien tenemos los setters y getters de algunos parametros con el fin de que alguna clase necesite utilizarlos, en este caso la vista. En este caso, son los paneles.
   Y cuando los metodos de seleccion son ejecutados.
