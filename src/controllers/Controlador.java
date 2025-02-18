@@ -271,8 +271,7 @@ public void mostrarRutaAnimada() {
         protected Void doInBackground() throws Exception {
             // Esperar a que el worker de la animación termine
             worker.get();
-
-            // Ahora, pintamos las celdas que no fueron parte de la ruta (y están libres)
+            // Ahora, pintamos las celdas que no fueron parte de la ruta (y están libres)   
             for (int i = 0; i < matrizObj.getFilas(); i++) {
                 for (int j = 0; j < matrizObj.getColumnas(); j++) {
                     Cell celdaActual = new Cell(i, j);
@@ -282,6 +281,7 @@ public void mostrarRutaAnimada() {
                     }
                 }
             }
+                
             return null;
         }
     };
