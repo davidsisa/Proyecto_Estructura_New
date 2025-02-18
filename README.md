@@ -105,10 +105,6 @@ de estas clases como modelos en el controlador para su propio uso.
 
   Y el constructor que inicializa vista y modelo.
   
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/9239f166-6067-46ec-baab-9a67800126e4" alt="image">
-</p>
-
   Contiene en total 12 metodos entre publicas y privadas:
   
   Cada metodo se programo con el fin de llamarlos desde la vista, aqui va un resumen de la funcionalidad de cada metodo explicado del controlador.
@@ -118,7 +114,9 @@ de estas clases como modelos en el controlador para su propio uso.
 
   Aqui esta la explicación del desarrollo de cada metodo con su respectivo codigo: 
   
-  El Metodo  seleccionarMetodos() sin parametros. Contiene Strings y sobretodo JOptionPanes, capaz de enviar mensaje a los usuarios 
+  El Metodo  seleccionarMetodos() sin parametros. Contiene Strings y sobretodo JOptionPanes, capaz de enviar mensaje a los usuarios.
+  ![image](https://github.com/user-attachments/assets/320d6627-e12b-46a3-b858-7ba22e1b8cfe)
+
 
   El Metodo  actualizarMatriz() con dos parametros Integer filas y columnas. Remueve los objetos que contiene el panel e inicializa las dos variables matrizObj y botones.
   Con bucles para llenar con booleanos la matriz y con colores los botones.
