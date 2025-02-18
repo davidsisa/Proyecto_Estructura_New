@@ -176,13 +176,45 @@ de estas clases como modelos en el controlador para su propio uso.
   <img src="https://github.com/user-attachments/assets/5fddae7a-8821-4986-9d1c-e7ccde2b4360" alt="image">
   </p>
 
-
   En total estos son los metodos pero tambien tenemos los setters y getters de algunos parametros con el fin de que alguna clase necesite utilizarlos, en este caso la vista. En este caso, son los paneles.
   Y cuando los metodos de seleccion son ejecutados.
-  ![image](https://github.com/user-attachments/assets/b3539834-1b63-4637-b476-db96692663fe)
 
-
+  En cuanto a la vista, simplemente se carga las librerias de interfaz grafica, y se añade la logica de posicion, color e inputs de cada componente, y se llama los metodos del controlador.
   
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2ef7282b-8335-4891-be7b-3cfca2b50cfa" alt="image">
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/35c87f85-de17-40a6-a03b-f3c6608802e5" alt="image">
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/27ab599f-0bc6-4b9d-b8d1-0a0de1814af1" alt="image">
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/aa491b49-60c6-4f8d-957a-1c0ecd71d207" alt="image">
+</p>
+
+## Conclusiones:
+
+En conclusión, el metodo mas eficaz es el metodo de busqueda por anchura, debido a su concepto, y aplicación dentro del programa. Esto porque garantiza encontrar el camino en termino de numero de pasos,
+ya que explora todos los nodos a la misma distancia del nodo de inicio antes de moverse mas lejos.
+
+## Aplicaciones:
+
+David Sisa: El objetivo era ver que busqueda es la mas optima, pero depende de que problema se enfrenta. En este caso, BFS es el mas apto para ello. En aplicaciones de estos metodos de busqueda puede estar
+en mapas y navegación donde se utilice estos metodos para encontrar el camino mas corto hacia un lugar, o el recorrido de un robot, en donde puede elegir el paso del mismo, segun la ruta mas corta, y la
+eficiencia de la logica de codigo, que puede ser recursividad, programación dinamica, BFS o DFS.
+
+
+
+
+
+
+
+
 
   
   
