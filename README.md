@@ -8,7 +8,7 @@
 
 - Carrera: Ingenieria en Ciencias de la Computación
 - Materia: Estructura de Datos
-- Integrantes: David Esteban Sisa Buestan  'dsisab@est.ups.edu.ec', Erick Alexander Vizhñay Paucar 'evizhnayp@est.ups.edu.ec, Eduardo Burbano
+- Integrantes: David Esteban Sisa Buestan  'dsisab@est.ups.edu.ec', Erick Alexander Vizhñay Paucar 'evizhnayp@est.ups.edu.ec, Eduardo Urbano 'eburbanof@est.ups.edu.ec'
 
 ## Descripción
  Se plantea hacer un programa donde el usuario pueda crear una matriz, donde pueda seleccionar el metodo de busqueda, los
@@ -227,7 +227,7 @@ David Sisa: En conclusión, el método más eficaz es el método de busqueda por
 
 Alexander Vizhñay: Se observará que BFS es el más eficiente para encontrar el camino más corto, mientras que DFS puede ser menos óptimo debido a su exploración profunda sin priorizar distancias. La Recursión ofrece una implementación intuitiva, pero consume más memoria en casos grandes, y la Programación Dinámica optimiza los cálculos almacenando resultados intermedios.
 
-Eduardo Burbano: ****
+Eduardo Burbano: En este proyecto, implementamos métodos de búsqueda y backtracking para la resolución de laberintos. Uno de los mayores retos fue integrar estos métodos en una interfaz gráfica siguiendo MVC. Sin embargo, logramos concluir exitosamente el desarrollo y analizar el comportamiento de los cuatro métodos de búsqueda implementados. Tras la evaluación de los resultados, determinamos que el método BFS es el más óptimo para este caso, debido a su lógica de exploración sistemática y eficiencia en la búsqueda de la solución.
 
 ## Aplicaciones: 
 
