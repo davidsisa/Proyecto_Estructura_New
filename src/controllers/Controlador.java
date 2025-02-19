@@ -137,14 +137,13 @@ public class Controlador {
                 "Reinicio", JOptionPane.INFORMATION_MESSAGE);
     }
 
-    public List<Cell> encontrarRutaRecursiva() {
-
+    private List<Cell> encontrarRutaRecursiva() {
         List<Cell> ruta = new ArrayList<>();
         List<Cell> path = new ArrayList<>();  // Para almacenar el camino explorado
-
+    
         if (inicio != null && fin != null) {
             boolean[][] visitado = new boolean[matrizObj.getFilas()][matrizObj.getColumnas()];
-
+    
             if (buscarRutaRecursiva(inicio.row, inicio.col, ruta, path, visitado)) {
                 return ruta;
             }
@@ -153,8 +152,9 @@ public class Controlador {
     }
 
     private boolean buscarRutaRecursiva(int row, int col, List<Cell> ruta, List<Cell> path, boolean[][] visitado) {
+        // Verificación de límites y obstáculos
         if (row < 0 || col < 0 || row >= matrizObj.getFilas() || col >= matrizObj.getColumnas()
-                || !matrizObj.getValor(row, col) || visitado[row][col]) {
+            || !matrizObj.getValor(row, col) || visitado[row][col]) {
             return false;
         }
 
@@ -181,6 +181,7 @@ public class Controlador {
         ruta.remove(ruta.size() - 1);
         return false;
     }
+
 
     public void mostrarRuta() {
         if (metodoSeleccionado == null) {
@@ -250,7 +251,7 @@ public void mostrarRutaAnimada() {
                 // Pinta de verde la celda del recorrido (ruta más rápida)
                 botones[c.row][c.col].setBackground(Color.GREEN);
                 // Pausa entre los pasos para crear la animación
-                Thread.sleep(300); // Ajusta este valor si quieres más o menos retraso
+                Thread.sleep(50); // Ajusta este valor si quieres más o menos retraso
             }
             return null;
         }
@@ -271,7 +272,8 @@ public void mostrarRutaAnimada() {
         protected Void doInBackground() throws Exception {
             // Esperar a que el worker de la animación termine
             worker.get();
-            // Ahora, pintamos las celdas que no fueron parte de la ruta (y están libres)   
+
+            // Ahora, pintamos las celdas que no fueron parte de la ruta (y están libres)
             for (int i = 0; i < matrizObj.getFilas(); i++) {
                 for (int j = 0; j < matrizObj.getColumnas(); j++) {
                     Cell celdaActual = new Cell(i, j);
@@ -281,7 +283,6 @@ public void mostrarRutaAnimada() {
                     }
                 }
             }
-                
             return null;
         }
     };
@@ -291,148 +292,156 @@ public void mostrarRutaAnimada() {
 }
 
 
-    private List<Cell> programacionDinamica() {
-        List<Cell> ruta = new ArrayList<>();
-        List<Cell> path = new ArrayList<>();
-        if (inicio == null || fin == null) {
-            return ruta;
-        }
-    
-        boolean[][] visitado = new boolean[matrizObj.getFilas()][matrizObj.getColumnas()];
-        Map<Cell, Boolean> memo = new HashMap<>(); // Usar Cell como clave y Boolean como valor
-    
-        if (pgDinamica(inicio.row, inicio.col, ruta, path, visitado, memo)) {
-            return ruta;
-        }
-        
-        return path;
-    }
-    
-    private boolean pgDinamica(int row, int col, List<Cell> ruta, List<Cell> path, boolean[][] visitado, Map<Cell, Boolean> memo) {
-        Cell currentCell = new Cell(row, col);  // Usar Cell para representar la celda actual
-    
-        if (row < 0 || col < 0 || row >= matrizObj.getFilas() || col >= matrizObj.getColumnas()
-                || !matrizObj.getValor(row, col) || visitado[row][col]) {
-            return false;
-        }
-    
-        // Verificar si ya se calculó este subproblema utilizando la celda como clave
-        if (memo.containsKey(currentCell)) {
-            return memo.get(currentCell);  // Devuelve el resultado almacenado (true = camino encontrado, false = no)
-        }
-    
-        ruta.add(currentCell);
-        path.add(currentCell);
-        visitado[row][col] = true;
-    
-        if (row == fin.row && col == fin.col) {
-            memo.put(currentCell, true);  // Guardar el resultado de que se encontró el camino
-            return true;
-        }
-    
-        boolean foundDinamica = pgDinamica(row, col + 1, ruta, path, visitado, memo) 
-                || pgDinamica(row + 1, col, ruta, path, visitado, memo) 
-                || pgDinamica(row, col - 1, ruta, path, visitado, memo) 
-                || pgDinamica(row - 1, col, ruta, path, visitado, memo); 
-    
-        // Guardar el resultado de este subproblema en el HashMap
-        memo.put(currentCell, foundDinamica);  // Almacenar true si se encontró un camino, false si no.
-    
-        if (!foundDinamica) {
-            ruta.remove(ruta.size() - 1);
-        }
-    
-        return foundDinamica;
-    }
-    
-    private List<Cell> buscarDFS() {
-        List<Cell> ruta = new ArrayList<>();
-        List<Cell> path = new ArrayList<>();  // Para almacenar el camino explorado
-        if (inicio == null || fin == null) {
-            return ruta;
-        }
-
-        boolean[][] visitado = new boolean[matrizObj.getFilas()][matrizObj.getColumnas()];
-        if (dfsHelper(inicio.row, inicio.col, ruta, path, visitado)) {
-            return ruta;
-        }
-        return path;  // Devuelve el camino explorado hasta el punto donde se detuvo
+private List<Cell> programacionDinamica() {
+    List<Cell> ruta = new ArrayList<>();
+    List<Cell> path = new ArrayList<>();
+    if (inicio == null || fin == null) {
+        return ruta;
     }
 
-    private boolean dfsHelper(int row, int col, List<Cell> ruta, List<Cell> path, boolean[][] visitado) {
-        if (row < 0 || col < 0 || row >= matrizObj.getFilas() || col >= matrizObj.getColumnas()
-                || !matrizObj.getValor(row, col) || visitado[row][col]) {
-            return false;
-        }
+    boolean[][] visitado = new boolean[matrizObj.getFilas()][matrizObj.getColumnas()];
+    Map<Cell, Boolean> memo = new HashMap<>();
 
-        ruta.add(new Cell(row, col));  // Añadir al camino actual
-        path.add(new Cell(row, col));  // Añadir al camino explorado
-        visitado[row][col] = true;
+    if (pgDinamica(inicio.row, inicio.col, ruta, path, visitado, memo)) {
+        return ruta;
+    }
+    
+    return path;
+}
 
-        if (row == fin.row && col == fin.col) {
-            return true;
-        }
+private boolean pgDinamica(int row, int col, List<Cell> ruta, List<Cell> path, boolean[][] visitado, Map<Cell, Boolean> memo) {
+    Cell currentCell = new Cell(row, col);
 
-        // Intentar moverse en todas las direcciones posibles
-        if (dfsHelper(row, col + 1, ruta, path, visitado)
-                || // Abajo
-                dfsHelper(row + 1, col, ruta, path, visitado)
-                || // Arriba
-                dfsHelper(row, col - 1, ruta, path, visitado)
-                || // Derecha
-                dfsHelper(row - 1, col, ruta, path, visitado)) {  // Izquierda
-            return true;
-        }
-
-        // Si no se encuentra la ruta, deshacer el último paso (pero sin eliminar el recorrido ya realizado)
-        ruta.remove(ruta.size() - 1);
+    if (row < 0 || col < 0 || row >= matrizObj.getFilas() || col >= matrizObj.getColumnas()
+            || !matrizObj.getValor(row, col) || visitado[row][col]) {
         return false;
     }
 
-    private List<Cell> buscarBFS() {
-        List<Cell> ruta = new ArrayList<>();
-        List<Cell> path = new ArrayList<>();  // Para almacenar las celdas exploradas
-        if (inicio == null || fin == null) {
-            return ruta;
-        }
-
-        boolean[][] visitado = new boolean[matrizObj.getFilas()][matrizObj.getColumnas()];
-        Queue<List<Cell>> cola = new LinkedList<>();
-        List<Cell> inicioRuta = new ArrayList<>();
-        inicioRuta.add(inicio);
-        cola.add(inicioRuta);
-        visitado[inicio.row][inicio.col] = true;
-
-        while (!cola.isEmpty()) {
-            List<Cell> camino = cola.poll();
-            Cell actual = camino.get(camino.size() - 1);
-
-            // Añadir al path las celdas exploradas
-            path.add(actual);
-
-            if (actual.row == fin.row && actual.col == fin.col) {
-                return camino;  // Si encontramos el camino, devolverlo
-            }
-
-            int[][] direcciones = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
-            for (int[] dir : direcciones) {
-                int newRow = actual.row + dir[0];  // Mueve a la fila según la dirección
-                int newCol = actual.col + dir[1];  // Mueve a la columna según la dirección
-
-                if (newRow >= 0 && newRow < matrizObj.getFilas()
-                        && newCol >= 0 && newCol < matrizObj.getColumnas()
-                        && matrizObj.getValor(newRow, newCol) && !visitado[newRow][newCol]) {
-
-                    visitado[newRow][newCol] = true;
-                    List<Cell> nuevoCamino = new ArrayList<>(camino);
-                    nuevoCamino.add(new Cell(newRow, newCol));
-                    cola.add(nuevoCamino);
-                }
-            }
-        }
-
-        return path;  // Si no se encuentra un camino, devolver las celdas exploradas
+    if (memo.containsKey(currentCell)) {
+        return memo.get(currentCell);
     }
+
+    // Marcar como visitado en memorización
+    memo.put(currentCell, false); 
+
+    ruta.add(currentCell);
+    path.add(currentCell);
+    visitado[row][col] = true;
+
+    if (row == fin.row && col == fin.col) {
+        memo.put(currentCell, true);
+        return true;
+    }
+
+    boolean foundDinamica = pgDinamica(row, col + 1, ruta, path, visitado, memo) || // Derecha
+                            pgDinamica(row + 1, col, ruta, path, visitado, memo) || // Abajo
+                            pgDinamica(row, col - 1, ruta, path, visitado, memo) || // Izquierda
+                            pgDinamica(row - 1, col, ruta, path, visitado, memo);   // Arriba
+
+    memo.put(currentCell, foundDinamica); // Guardar el resultado
+
+    if (!foundDinamica) {
+        ruta.remove(ruta.size() - 1);
+    }
+
+    return foundDinamica;
+}
+
+
+private List<Cell> buscarDFS() {
+    List<Cell> ruta = new ArrayList<>();
+    List<Cell> path = new ArrayList<>(); // Para almacenar el camino explorado
+    if (inicio == null || fin == null) {
+        return ruta;
+    }
+
+    boolean[][] visitado = new boolean[matrizObj.getFilas()][matrizObj.getColumnas()];
+    if (dfsHelper(inicio.row, inicio.col, ruta, path, visitado)) {
+        return ruta; // Devuelve la ruta si se encuentra
+    }
+    return path; // Devuelve el camino explorado si no hay ruta
+}
+
+private boolean dfsHelper(int row, int col, List<Cell> ruta, List<Cell> path, boolean[][] visitado) {
+    if (row < 0 || col < 0 || row >= matrizObj.getFilas() || col >= matrizObj.getColumnas()
+            || !matrizObj.getValor(row, col) || visitado[row][col]) {
+        return false;
+    }
+
+    ruta.add(new Cell(row, col)); // Añadir a la ruta actual
+    path.add(new Cell(row, col)); // Añadir al camino explorado
+    visitado[row][col] = true; // Marcar como visitado
+
+    if (row == fin.row && col == fin.col) {
+        return true; // Se encontró la meta
+    }
+
+    // Intentar moverse en todas las direcciones posibles
+    if (dfsHelper(row - 1, col, ruta, path, visitado) // Arriba
+            || dfsHelper(row, col + 1, ruta, path, visitado) // Derecha
+            || dfsHelper(row + 1, col, ruta, path, visitado) // Abajo
+            || dfsHelper(row, col - 1, ruta, path, visitado)) { // Izquierda
+        return true;
+    }
+
+    // Si no se encuentra la ruta, deshacer el último paso (pero sin eliminar el recorrido ya realizado)
+    ruta.remove(ruta.size() - 1);
+    return false;
+}
+
+private List<Cell> buscarBFS() {
+    List<Cell> ruta = new ArrayList<>();
+    List<Cell> path = new ArrayList<>(); // Para almacenar las celdas exploradas
+    if (inicio == null || fin == null) {
+        return ruta;
+    }
+
+    boolean[][] visitado = new boolean[matrizObj.getFilas()][matrizObj.getColumnas()];
+    Queue<Cell> cola = new LinkedList<>();
+    Map<Cell, Cell> parentMap = new HashMap<>(); // Para reconstruir la ruta
+
+    cola.add(inicio);
+    visitado[inicio.row][inicio.col] = true;
+    parentMap.put(inicio, null); // Nodo inicial sin padre
+
+    int[][] direcciones = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}}; // Derecha, Abajo, Izquierda, Arriba
+
+    while (!cola.isEmpty()) {
+        Cell actual = cola.poll();
+        path.add(actual); // Registrar nodo explorado
+
+        if (actual.row == fin.row && actual.col == fin.col) {
+            return reconstruirCamino(parentMap, fin); // Reconstruir camino al final
+        }
+
+        for (int[] dir : direcciones) {
+            int newRow = actual.row + dir[0];
+            int newCol = actual.col + dir[1];
+
+            if (newRow >= 0 && newRow < matrizObj.getFilas()
+                    && newCol >= 0 && newCol < matrizObj.getColumnas()
+                    && matrizObj.getValor(newRow, newCol) && !visitado[newRow][newCol]) {
+
+                visitado[newRow][newCol] = true;
+                Cell vecino = new Cell(newRow, newCol);
+                parentMap.put(vecino, actual); // Guardar el nodo anterior
+                cola.add(vecino);
+            }
+        }
+    }
+
+    return path; // Si no se encuentra un camino, devolver las celdas exploradas
+}
+
+// Método para reconstruir el camino desde el final hasta el inicio
+private List<Cell> reconstruirCamino(Map<Cell, Cell> parentMap, Cell fin) {
+    List<Cell> ruta = new ArrayList<>();
+    for (Cell actual = fin; actual != null; actual = parentMap.get(actual)) {
+        ruta.add(actual);
+    }
+    Collections.reverse(ruta); // Se invierte la lista para obtener el orden correcto
+    return ruta;
+}
 
     public boolean isModoObstaculos() {
         return modoObstaculos;
@@ -481,5 +490,4 @@ public void mostrarRutaAnimada() {
     public void setPanelMatriz() {
         this.panelMatriz = panelMatriz;
     }
-
 }
