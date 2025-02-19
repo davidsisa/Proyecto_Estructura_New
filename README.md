@@ -200,12 +200,28 @@ de estas clases como modelos en el controlador para su propio uso.
   <img src="https://github.com/user-attachments/assets/aa491b49-60c6-4f8d-957a-1c0ecd71d207" alt="image">
 </p>
 
+## Resultados:
+
+![image](https://github.com/user-attachments/assets/68768a6f-de9b-4ebe-8bba-f78b95cfb8ed)
+
+![image](https://github.com/user-attachments/assets/af5447a1-c6eb-46cd-9647-41d403116ba2)
+
+![image](https://github.com/user-attachments/assets/16077d56-a7b5-490d-8a15-c11328eae2a3)
+
+
+
+
 ## Conclusiones:
 David Sisa: En conclusión, el método más eficaz es el método de busqueda por anchura, debido a su concepto y aplicación dentro del programa. Esto porque garantiza encontrar el camino en término de numerosos pasos, ya que explora todos los nodos a la misma distancia del nodo de inicio antes de moverse más lejos. 
 
 Alexander Vizhñay: Se observará que BFS es el más eficiente para encontrar el camino más corto, mientras que DFS puede ser menos óptimo debido a su exploración profunda sin priorizar distancias. La Recursión ofrece una implementación intuitiva, pero consume más memoria en casos grandes, y la Programación Dinámica optimiza los cálculos almacenando resultados intermedios.
 
 Eduardo Burbano: ****
+
+## Aplicaciones: 
+
+El codigo es una muestra de la eficiencia de cada metodologia de busqueda, en las conclusiones ponemos que en este ejercicio el mas optimo es BFS, debido a su corta ejecución, es por eso que depende de cada situación el uso de las tecnicas de busqueda. En este caso pueden ser aplicados en navegación y mapas, cuando se quiere buscar la ruta mas corta. Al igual que la busqueda de archivos, que tambien es una opción.
+Y en contexto de paginas web, las busquedas de las mismas, y busqueda por filtros.
 
 
 
