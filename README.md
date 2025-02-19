@@ -114,7 +114,7 @@ de estas clases como modelos en el controlador para su propio uso.
 
   Aqui esta la explicación del desarrollo de cada metodo con su respectivo codigo: 
   
-  El Metodo  seleccionarMetodos() sin parametros. Contiene Strings y sobretodo JOptionPanes, capaz de enviar mensaje a los usuarios.
+  El Metodo  seleccionarMetodos() sin parametros. Contiene Strings y sobretodo JOptionPanes, capaz de enviar mensaje a los usuarios. 
   
 <p align="center">
   <img src="https://github.com/user-attachments/assets/aa80e9c8-b3c5-42f2-8fe0-022036f7b2d5" alt="image">
@@ -154,6 +154,8 @@ de estas clases como modelos en el controlador para su propio uso.
 
   El Metodo programaciónDinamica() inicializa una matriz dp donde cada celda almacena la cantidad de caminos posibles hasta ese punto. Si no hay caminos posibles hasta la celda de fin, retorna una lista vacía.
   Para reconstruir el camino, retrocede desde la celda de fin hasta la de inicio, siguiendo las celdas con caminos acumulados.
+
+  Este metodo usa el memo.put() para que se recuerde si una celda lleva al destino o no. Con esto se evita recorrer el mismo camino.
   
   <p align="center">
   <img src="https://github.com/user-attachments/assets/a5dce68a-6f87-4ca6-b08d-4ad13dcd1020" alt="image">
@@ -161,19 +163,27 @@ de estas clases como modelos en el controlador para su propio uso.
 
 
   El Metodo buscarDFS() utiliza recursión para explorar cada posible dirección desde el punto de inicio, marca las celdas visitadas para evitar ciclos, y si  se alcanza la celda de fin, el camino se agrega a la       lista de resultados. Tiene un metodo llamado DFSHELPER el cual es el metodo que valida recursivamente los visitados y recorridos.
+
+  El metodo usa backtracking, si no encuentra el camino, retrocede , esto estan en el metodo DFSHELPER.
+   
   
 <p align="center">
   <img src="https://github.com/user-attachments/assets/b0740513-1f9c-40ed-b1e5-19d4f7cee87a" alt="image">
 </p>
 
   El Metodo  buscarBFS() que utiliza una cola para gestionar los nodos por explorar y que en cada iteración, explora las celdas adyacentes y las agrega a la cola si no han sido visitadas.
-
+  Como es por BFS, explora por niveles, y no vuelve a sus pasos. Por ello, no tiene backtracking.
 <p align="center">
   <img src="https://github.com/user-attachments/assets/d570b1a7-b0aa-4c26-afce-0e30c5c42019" alt="image">
 </p>
 
   El Metodo encotrarRutaRecurvia() , capaz de ejecutar un metodo privado buscarRutaRecursiva(), donde se utiliza la programación recursiva hasta que se encuentre
   la ruta.
+
+  El metodo aplica backtracking,
+  en donde al topar con un obstaculo, se devuelve para poder recorrer otras rutas.
+
+  En este caso intenta avanzar en todas las direcciones posibles.
   
   <p align="center">
   <img src="https://github.com/user-attachments/assets/5fddae7a-8821-4986-9d1c-e7ccde2b4360" alt="image">
@@ -199,6 +209,7 @@ de estas clases como modelos en el controlador para su propio uso.
 <p align="center">
   <img src="https://github.com/user-attachments/assets/aa491b49-60c6-4f8d-957a-1c0ecd71d207" alt="image">
 </p>
+
 
 ## Resultados:
 
