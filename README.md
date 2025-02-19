@@ -202,8 +202,10 @@ de estas clases como modelos en el controlador para su propio uso.
 
 ## Conclusiones:
 David Sisa: En conclusión, el método más eficaz es el método de busqueda por anchura, debido a su concepto y aplicación dentro del programa. Esto porque garantiza encontrar el camino en término de numerosos pasos, ya que explora todos los nodos a la misma distancia del nodo de inicio antes de moverse más lejos. 
+
 Alexander Vizhñay: Se observará que BFS es el más eficiente para encontrar el camino más corto, mientras que DFS puede ser menos óptimo debido a su exploración profunda sin priorizar distancias. La Recursión ofrece una implementación intuitiva, pero consume más memoria en casos grandes, y la Programación Dinámica optimiza los cálculos almacenando resultados intermedios.
-Eduardo Burbano: ese vrg nose que ira a poner
+
+Eduardo Burbano: ****
 
 
 
